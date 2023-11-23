@@ -8,15 +8,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.model.Account;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class AccountController {
 	
 	@Autowired
+	HttpSession session;
+	@Autowired
 	Account account;
 	
-	// ログイン画面表示
-	@GetMapping({"/", "/login"})
+	// ログイン画面表示およびログアウト処理
+	@GetMapping({"/", "/login", "/logout"})
 	public String index() {
+		// セッションスコープを破棄
+		session.invalidate();
 		// 画面遷移
 		return "login";
 	}
