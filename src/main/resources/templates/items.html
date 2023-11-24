@@ -6,13 +6,11 @@
 <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-	<header>
-		<h1><a href="/items">サンプルショッピング</a></h1>
-		<p>[[${@account.name}]]さんがログイン中 <a href="/logout">ログアウト</a></p>
-	</header>
+	<!-- ヘッダ領域の表示 -->
+	<th:block th:replace="~{parts/header}"></th:block>
 	<hr />
-	<footer>
-		<div class="copyright">&copy;ABCショップ</div>
-	</footer>
+	<hr />
+	<!-- フッタ領域の表示 -->
+	<th:block th:replace="~{parts/footer}"></th:block>
 </body>
 </html>
