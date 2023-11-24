@@ -17,6 +17,9 @@ header, nav, footer {
 header a, nav a {
 	color: #FFFFFF;
 }
+nav  a {
+	margin-right: 10px;
+}
 /* 仕切り線 */
 hr {
 	border-top: 2px dashed #7D8BAE;

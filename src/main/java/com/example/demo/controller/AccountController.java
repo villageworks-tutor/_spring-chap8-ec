@@ -33,6 +33,6 @@ public class AccountController {
 		// セッションスコープに登録されているアカウント情報にリクエストパラメータを設定
 		account.setName(name);
 		// 画面遷移
-		return "items";
+		return "redirect:/items";
 	}
 }
