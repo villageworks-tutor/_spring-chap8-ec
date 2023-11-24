@@ -9,6 +9,24 @@
 	<!-- ヘッダ領域の表示 -->
 	<th:block th:replace="~{parts/header}"></th:block>
 	<hr />
+	<table th:if="${itemList}">
+		<tr>
+			<th>NO</th>
+			<th>商品名</th>
+			<th>値段</th>
+			<th></th>
+		</tr>
+		<tr th:each="item:${itemList}">
+			<td>[[${item.id}]]</td>
+			<td>[[${item.name}]]</td>
+			<td>[[${item.price}]]</td>
+			<td>
+				<form action="" method="">
+					<button>カートに追加</button>
+				</form>
+			</td>
+		</tr>
+	</table>
 	<hr />
 	<!-- フッタ領域の表示 -->
 	<th:block th:replace="~{parts/footer}"></th:block>
