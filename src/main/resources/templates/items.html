@@ -9,6 +9,7 @@
 	<!-- ヘッダ領域の表示 -->
 	<th:block th:replace="~{parts/header}"></th:block>
 	<hr />
+	<!-- ナビゲーションメニュー領域の表示 -->
 	<nav>
 		<a href="/items">全商品</a>
 		<a th:each="category:${categoryList}"
@@ -16,6 +17,7 @@
 		   th:text="${category.name}" />
 		<a href="/cart">カートを見る</a>
 	</nav>
+	<!-- 商品一覧領域の表示 -->
 	<table th:if="${itemList}">
 		<tr>
 			<th>NO</th>
