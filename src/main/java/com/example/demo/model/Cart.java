@@ -25,4 +25,26 @@ public class Cart {
 		return this.itemList;
 	}
 
+	public void add(Item target) {
+		// 追加する商品がカート内にあるかどうかをチェック
+		Item exists = null;
+		for (Item item : this.itemList) {
+			if (item.getId() == target.getId()) {
+				// カート内に同じ商品が見つかった場合：
+				exists = item;
+				break;
+			}
+			continue;
+		}
+		// カート内にが見つかったかどうかで処理を分岐
+		if (exists == null) {
+			// カート内にが見つからなかった場合：単純に商品リストに追加
+			this.itemList.add(target);
+		} else {
+			// カートが見つかった場合：当該商品の数量を変更
+			int quantity = exists.quantity + target.quantity;
+			exists.setQuantity(quantity);
+		}
+	}
+
 }
