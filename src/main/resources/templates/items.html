@@ -30,7 +30,8 @@
 			<td>[[${item.name}]]</td>
 			<td>[[${item.price}]]</td>
 			<td>
-				<form action="" method="">
+				<form action="/cart/add" method="post">
+					<input type="hidden" name="itemId" th:value="${item.id}" />
 					<button>カートに追加</button>
 				</form>
 			</td>
