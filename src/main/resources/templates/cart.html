@@ -10,6 +10,9 @@
 	<th:block th:replace="~{parts/header}"></th:block>
 	<hr />
 	<th:block th:replace="cartItem"></th:block>
+	<form action="/order" method="get">
+		<button>注文する</button>
+	</form>
 	<hr />
 	<!-- フッタ領域の表示 -->
 	<th:block th:replace="~{parts/footer}"></th:block>
