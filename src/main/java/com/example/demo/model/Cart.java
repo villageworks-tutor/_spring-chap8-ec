@@ -24,10 +24,22 @@ public class Cart {
 	public List<Item> getItemList() {
 		return this.itemList;
 	}
+	
+	/**
+	 * カート内商品の金額の総合計を種痘する
+	 * @return カート内商品の金額の総合計 
+	 */
+	public Integer getTotalPrice() {
+		Integer total = 0;
+		for (Item item : this.itemList) {
+			total += item.getPrice() * item.getQuantity();
+		}
+		return total;
+	}
 
 	/**
-	 * 商品をカートに追加する
-	 * @param target 追加する商品
+	 * カートに商品を追加する
+	 * @param target 追加対象の商品
 	 */
 	public void add(Item target) {
 		// 追加する商品がカート内にあるかどうかをチェック
@@ -52,14 +64,14 @@ public class Cart {
 	}
 
 	/**
-	 * 指定された商品番号の商品を削除する
+	 * カート内の商品を削除する
 	 * @param itemId 削除対象商品の商品番号
 	 */
 	public void delete(Integer itemId) {
 		for (Item item : this.itemList) {
 			if (item.getId() == itemId) {
 				this.itemList.remove(item);
-				break;
+				break; // TODO: ここの行の意味を考えてみよう
 			}
 		}
 	}

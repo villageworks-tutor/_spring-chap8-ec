@@ -44,10 +44,11 @@ public class CartController {
 	// カートから商品を削除
 	@PostMapping("/cart/delete")
 	public String deleteCart(
-			@RequestParam(name = "itemId", defaultValue = "") Integer itemId) {
-		// セッションに登録されているカートから指定された商品番号の商品を削除
+			@RequestParam("itemId") Integer itemId) {
+		// リクエストパラメータをもとに商品を削除
 		cart.delete(itemId);
 		// 画面遷移
 		return "cart";
 	}
+	
 }
