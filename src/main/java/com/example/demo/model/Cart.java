@@ -25,6 +25,10 @@ public class Cart {
 		return this.itemList;
 	}
 
+	/**
+	 * 商品をカートに追加する
+	 * @param target 追加する商品
+	 */
 	public void add(Item target) {
 		// 追加する商品がカート内にあるかどうかをチェック
 		Item exists = null;
@@ -44,6 +48,19 @@ public class Cart {
 			// カートが見つかった場合：当該商品の数量を変更
 			int quantity = exists.quantity + target.quantity;
 			exists.setQuantity(quantity);
+		}
+	}
+
+	/**
+	 * 指定された商品番号の商品を削除する
+	 * @param itemId 削除対象商品の商品番号
+	 */
+	public void delete(Integer itemId) {
+		for (Item item : this.itemList) {
+			if (item.getId() == itemId) {
+				this.itemList.remove(item);
+				break;
+			}
 		}
 	}
 

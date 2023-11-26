@@ -1,4 +1,4 @@
-<!-- カーに商品が入っていない場合はカート内商品一覧は非表示 -->
+<!-- カートに商品が入っていない場合はカート内商品一覧は非表示 -->
 <table th:if="${@cart.itemList.size() > 0}">
 	<tr>
 		<th>NO</th>
@@ -15,7 +15,7 @@
 		<td>[[${item.quantity}]]</td>
 		<td>[[${item.price * item.quantity}]]</td>
 		<td>
-			<form action="" method="post">
+			<form action="/cart/delete" method="post">
 				<input type="hidden" name="itemId" th:value="${item.id}" />
 				<button>削除</button>
 			</form>
