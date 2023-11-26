@@ -24,7 +24,23 @@ public class Cart {
 	public List<Item> getItemList() {
 		return this.itemList;
 	}
+	
+	/**
+	 * カート内商品の金額の総合計を種痘する
+	 * @return カート内商品の金額の総合計 
+	 */
+	public Integer getTotalPrice() {
+		Integer total = 0;
+		for (Item item : this.itemList) {
+			total += item.getPrice() * item.getQuantity();
+		}
+		return total;
+	}
 
+	/**
+	 * カートに商品を追加する
+	 * @param target 追加対象の商品
+	 */
 	public void add(Item target) {
 		// 追加する商品がカート内にあるかどうかをチェック
 		Item exists = null;
