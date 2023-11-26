@@ -63,4 +63,17 @@ public class Cart {
 		}
 	}
 
+	/**
+	 * カート内の商品を削除する
+	 * @param itemId 削除対象商品の商品番号
+	 */
+	public void delete(Integer itemId) {
+		for (Item item : this.itemList) {
+			if (item.getId() == itemId) {
+				this.itemList.remove(item);
+				break; // TODO: ここの行の意味を考えてみよう
+			}
+		}
+	}
+
 }

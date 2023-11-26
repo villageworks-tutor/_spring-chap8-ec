@@ -40,4 +40,15 @@ public class CartController {
 		// 画面遷移
 		return "cart";
 	}
+	
+	// カートから商品を削除
+	@PostMapping("/cart/delete")
+	public String deleteCart(
+			@RequestParam("itemId") Integer itemId) {
+		// リクエストパラメータをもとに商品を削除
+		cart.delete(itemId);
+		// 画面遷移
+		return "cart";
+	}
+	
 }
