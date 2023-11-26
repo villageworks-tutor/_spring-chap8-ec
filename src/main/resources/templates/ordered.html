@@ -9,10 +9,10 @@
 	<!-- ヘッダ領域の表示 -->
 	<th:block th:replace="~{parts/header}"></th:block>
 	<hr />
-	<th:block th:replace="cartItem"></th:block>
-	<form action="/order" method="get">
-		<button>注文する</button>
-	</form>
+	<h2>ご注文いただきありがとうございました。</h2>
+	<p>お客様の注文番号は</p>
+	<h3 style="color: tomato;" th:text="${orderNumber}"></h3>
+	<p>になります。</p>
 	<hr />
 	<!-- フッタ領域の表示 -->
 	<th:block th:replace="~{parts/footer}"></th:block>
