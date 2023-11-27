@@ -81,6 +81,9 @@ public class OrderController {
 		// データベースに一括登録
 		orderDetailRepository.saveAll(orderDetailList);
 		
+		// セッションスコープに登録差rているカート情報を初期化
+		cart.clear();
+		
 		// スコープに注文番号を登録
 		model.addAttribute("orderNumber", order.getId());
 		// 画面遷移

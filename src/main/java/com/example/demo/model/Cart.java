@@ -76,4 +76,11 @@ public class Cart {
 		}
 	}
 
+	/**
+	 * カートの商品リストを初期化する
+	 */
+	public void clear() {
+		this .itemList = new ArrayList<>();
+	}
+
 }
